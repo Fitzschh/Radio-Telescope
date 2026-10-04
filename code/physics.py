@@ -34,6 +34,11 @@ def fractional_error(measured, actual):
 def percent_error(measured, actual):
     return (error(measured, actual) / actual) * 100
 
-print(error(measured, actual))
-print(fractional_error(measured, actual))
-print(f"Percent Error: {percent_error(measured, actual):.2f}%")
+#The average of a list of numbers
+def mean(x):
+    return sum(x) / len(x)
+
+#The difference between the maximum and minimum values in a list of numbers, or the range of the list. 
+def spread(x):
+    return max(x) - min(x)
+
