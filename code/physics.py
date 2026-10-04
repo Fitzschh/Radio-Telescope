@@ -1,4 +1,4 @@
-x = [5, 3, 4, 6]
+x = [25.2, 25.4, 25.6, 26.1]
 x_i = 2
 x_f = -5
 
@@ -41,4 +41,18 @@ def mean(x):
 #The difference between the maximum and minimum values in a list of numbers, or the range of the list. 
 def spread(x):
     return max(x) - min(x)
+
+#The uncertainty of a measurement is half the spread of the measurements. To account for the fact that the uncertainty is a measure of how much the measurements vary, we divide the spread by 2.
+def uncertainty_val(x):
+    return spread(x) / 2
+
+#The uncertainty range is the range of values that the true value of a measurement is likely to fall within. It is calculated by taking the mean of the measurements and adding and subtracting the uncertainty value.
+def uncertainty_range(x):
+    return (mean(x) - uncertainty_val(x), mean(x) + uncertainty_val(x))
+
+for i in range(len(x)):
+    if x[i] >= uncertainty_range(x)[0] and x[i] <= uncertainty_range(x)[1]:
+        print("The value ", x[i], " is within the uncertainty range.")
+    else:
+        print("The value ", x[i], " is not within the uncertainty range.")
 
