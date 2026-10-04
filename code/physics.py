@@ -15,4 +15,8 @@ def displacement(x_i, x_f):
 def avg_speed(x, t):
     return distance(x) / t
 
-print("Displacement: ", displacement(x_i, x_f))
+#The rate of change of position with respect to time
+def avg_velocity(x_i, x_f, t):
+    return displacement(x_i, x_f) / t
+
+print("Average velocity: ", avg_velocity(x_i, x_f, 10), "m/s")
