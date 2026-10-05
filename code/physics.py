@@ -5,6 +5,10 @@ x_f = -5
 measured = 11.9
 actual = 12.4
 
+v_i = 2.5
+v_f = 5.0
+t = 3.0
+
 #Total length of the path traveled
 def distance(x):
     x = [abs(i) for i in x]
@@ -57,6 +61,14 @@ def fractional_uncertainty(x):
 #The uncertainty percent is the uncertainty value divided by the mean of the measurements multiplied by 100. It is a measure of how much the measurements vary relative to the mean.
 def uncertainty_percent(x):
     return (uncertainty_val(x) / mean(x)) * 100 
+
+#The acceleration mostly defines the change in velocity over time. 
+def acceleration(v_i, v_f, t):
+    return (v_f - v_i) / t
+
+print("The acceleration of an object is: ", acceleration(v_i, v_f, t), "m/s^2")
+
+
 
 
 
