@@ -73,6 +73,10 @@ def acceleration(v_i, v_f, t):
 def force(m, a):
     return m * a
 
+#The net force is the vector sum of all the forces acting on an object. It can be calculated by summing the individual forces acting on the object.
+def net_force(v):
+    return sum(force(m, a) for m, a in v)
+
 print(f"Force: {force(m, acceleration(v_i, v_f, t)):.2f} N")
 
 
