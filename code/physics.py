@@ -50,9 +50,13 @@ def uncertainty_val(x):
 def uncertainty_range(x):
     return (mean(x) - uncertainty_val(x), mean(x) + uncertainty_val(x))
 
-for i in range(len(x)):
-    if x[i] >= uncertainty_range(x)[0] and x[i] <= uncertainty_range(x)[1]:
-        print("The value ", x[i], " is within the uncertainty range.")
-    else:
-        print("The value ", x[i], " is not within the uncertainty range.")
+#The fractional uncertainty is the uncertainty value divided by the mean of the measurements. It is a measure of how much the measurements vary relative to the mean.
+def fractional_uncertainty(x):
+    return uncertainty_val(x) / mean(x)
+
+#The uncertainty percent is the uncertainty value divided by the mean of the measurements multiplied by 100. It is a measure of how much the measurements vary relative to the mean.
+def uncertainty_percent(x):
+    return (uncertainty_val(x) / mean(x)) * 100 
+
+
 
