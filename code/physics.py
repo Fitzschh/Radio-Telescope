@@ -8,6 +8,7 @@ actual = 12.4
 v_i = 2.5
 v_f = 5.0
 t = 3.0
+m = 20.0
 
 #Total length of the path traveled
 def distance(x):
@@ -66,8 +67,13 @@ def uncertainty_percent(x):
 def acceleration(v_i, v_f, t):
     return (v_f - v_i) / t
 
-print("The acceleration of an object is: ", acceleration(v_i, v_f, t), "m/s^2")
+# Introducing Newton's Laws of Motion
 
+#Newton's Second Law states that the acceleration of an object is directly proportional to the net force acting on it and inversely proportional to its mass. It can be expressed mathematically as F = m * a, where F is the net force, m is the mass of the object, and a is the acceleration.
+def force(m, a):
+    return m * a
+
+print(f"Force: {force(m, acceleration(v_i, v_f, t)):.2f} N")
 
 
 
