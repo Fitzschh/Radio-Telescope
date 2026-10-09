@@ -10,6 +10,9 @@ v_f = 5.0
 t = 3.0
 m = 20.0
 
+mu_s = 0.5
+mu_k = 0.3
+
 #Total length of the path traveled
 def distance(x):
     x = [abs(i) for i in x]
@@ -77,7 +80,10 @@ def force(m, a):
 def net_force(v):
     return sum(force(m, a) for m, a in v)
 
-print(f"Force: {force(m, acceleration(v_i, v_f, t)):.2f} N")
+def friction_force(mu, N):
+    return mu * N
+
+
 
 
 
