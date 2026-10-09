@@ -88,6 +88,11 @@ def friction_force(mu, N):
 def work(F, d):
     return F * d
 
+#The kinetic energy of an object is the energy it possesses due to its motion. It can be calculated using the formula KE = 0.5 * m * v^2, where KE is the kinetic energy, m is the mass of the object, and v is its velocity.
+def kinetic_energy(m, v):
+    return 0.5 * m * v ** 2
+
+
 
 
 
