@@ -80,8 +80,13 @@ def force(m, a):
 def net_force(v):
     return sum(force(m, a) for m, a in v)
 
+#The frictional force is the force that opposes the motion of an object. It can be calculated using the coefficient of friction (mu) and the normal force (N) acting on the object. The formula for frictional force is F_friction = mu * N.
 def friction_force(mu, N):
     return mu * N
+
+#The work done by a force is the product of the force and the distance over which it acts. It can be calculated using the formula W = F * d, where W is the work done, F is the force, and d is the distance.
+def work(F, d):
+    return F * d
 
 
 
