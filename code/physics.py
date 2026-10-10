@@ -10,6 +10,9 @@ v_f = 5.0
 t = 3.0
 m = 20.0
 
+mu_s = 0.5
+mu_k = 0.3
+
 #Total length of the path traveled
 def distance(x):
     x = [abs(i) for i in x]
@@ -77,7 +80,20 @@ def force(m, a):
 def net_force(v):
     return sum(force(m, a) for m, a in v)
 
-print(f"Force: {force(m, acceleration(v_i, v_f, t)):.2f} N")
+#The frictional force is the force that opposes the motion of an object. It can be calculated using the coefficient of friction (mu) and the normal force (N) acting on the object. The formula for frictional force is F_friction = mu * N.
+def friction_force(mu, N):
+    return mu * N
+
+#The work done by a force is the product of the force and the distance over which it acts. It can be calculated using the formula W = F * d, where W is the work done, F is the force, and d is the distance.
+def work(F, d):
+    return F * d
+
+#The kinetic energy of an object is the energy it possesses due to its motion. It can be calculated using the formula KE = 0.5 * m * v^2, where KE is the kinetic energy, m is the mass of the object, and v is its velocity.
+def kinetic_energy(m, v):
+    return 0.5 * m * v ** 2
+
+
+
 
 
 
