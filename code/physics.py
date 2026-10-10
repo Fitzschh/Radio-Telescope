@@ -92,6 +92,16 @@ def work(F, d):
 def kinetic_energy(m, v):
     return 0.5 * m * v ** 2
 
+#The function for work-energy theorem
+def work_energy_theorem(Kf, Ki):
+    K_change = Kf - Ki
+    Wnet = K_change
+    return Wnet
+
+
+
+
+
 
 
 
