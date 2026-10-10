@@ -38,4 +38,9 @@ title("Work-Energy Theorem");
 legend("Net Work", "Kinetic Energy");
 
 grid on;
+drawnow;
+
+savefig("work-energy_vs_displacement.ofig");
+print("work-energy_vs_displacemnts.png", "-dpng", "-r300");
+
 
