@@ -1,11 +1,16 @@
+
 import csv
 from pathlib import Path
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "first_lnb_scan.csv"
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "first_lnb_scan.png"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "solar_morning_2026-10-16.csv"
+
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "solar_morning_spectrum.png"
+
+output.parent.mkdir(parents=True, exist_ok=True)
 
 frequencies = []
 powers = []
@@ -24,33 +29,30 @@ with open(source, newline="") as file:
             break
 
         start_hz = float(row[2])
-        end_hz = float(row[3])
-        power_db = float(row[6])
+        step_hz = float(row[4])
 
-        frequency_mhz = ((start_hz + end_hz) / 2) / 1000000 #Converting to MHz
+        power_values = row[6:-1]
 
-        frequencies.append(frequency_mhz)
-        powers.append(power_db)
+        for i, value in enumerate(power_values):
+            frequency_hz = start_hz + (i + 0.5) * step_hz
+            frequency_mhz = frequency_hz / 1_000_000
+            power_db = float(value)
+
+            frequencies.append(frequency_mhz)
+            powers.append(power_db)
 
 plt.figure(figsize=(10, 6))
 
 plt.plot(frequencies, powers)
 
 plt.xlabel("Frequency (MHz)")
-plt.ylabel("Power (dB)")
-plt.title("First LNB Scan")
+plt.ylabel("Reported Relative Power (dB)")
+plt.title(f"Morning RF Spectrum - {first_time}")
 plt.grid(True)
 
 plt.tight_layout()
-plt.savefig(output)
+plt.savefig(output, dpi=180)
 plt.close()
 
-print(f"Plotted {len(frequencies)} measurements")
-print(f"Saved graph to {output}")
-
-
-
-
-
-
-
+print(f"Plotted {len(frequencies)} frequency bins")
+print(f"Saved graph to: {output}")
