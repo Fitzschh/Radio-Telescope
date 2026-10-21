@@ -6,9 +6,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "lnb_on_recheck_2026-10-21_162328.csv"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "night_batch1_2026-10-21_2040.csv"
 
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "lnb_on_recheck_2026-10-21_162328_spectrum.png"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "night_batch1_2026-10-21_2040_spectrum.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -47,7 +47,7 @@ plt.plot(frequencies, powers)
 
 plt.xlabel("Frequency (MHz)")
 plt.ylabel("Reported Relative Power (dB)")
-plt.title(f"Morning RF Spectrum - {first_time}")
+plt.title(f"Night RF Spectrum - {first_time}")
 plt.grid(True)
 
 plt.tight_layout()
