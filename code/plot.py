@@ -6,9 +6,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "night_batch2_2026-10-22_0200.csv"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "night2_batch1_2026-10-23_0000.csv"
 
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "night_batch2_2026-10-22_0200_spectrum.png"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "night2_batch1_2026-10-23_0000_spectrum.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
