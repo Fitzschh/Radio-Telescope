@@ -7,8 +7,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "day3_batch2_2026-10-23_0950.csv"
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "day3_batch2_power_vs_time_clean.png"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "day2_rain_2026-10-22_0200.csv"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "day2_rain_power_vs_time_clean.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
