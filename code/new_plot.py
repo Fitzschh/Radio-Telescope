@@ -1,3 +1,4 @@
+
 import csv
 from pathlib import Path
 from datetime import datetime
@@ -7,8 +8,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "night_batch2_2026-10-22_0200.csv"
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "night_batch2_2026-10-22_0200_pvt.png"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "night_batch1_2026-10-21_2040.csv"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "night_batch1_2026-10-21_2040_pvt.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -25,7 +26,7 @@ with open(source, newline="") as file:
         if len(row) < 39:
             continue
 
-        time_str = row[1].strip()
+        time_str = row[0].strip() + " " + row[1].strip()
 
         row_powers = [float(value) for value in row[6:38]]
 
@@ -34,7 +35,7 @@ with open(source, newline="") as file:
 
         if time_str != current_time:
             average_power = sum(current_all_powers) / len(current_all_powers)
-            time_obj = datetime.strptime(current_time, "%H:%M:%S")
+            time_obj = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
             times.append(time_obj)
             powers.append(average_power)
 
@@ -45,7 +46,7 @@ with open(source, newline="") as file:
 
 if current_all_powers:
     average_power = sum(current_all_powers) / len(current_all_powers)
-    time_obj = datetime.strptime(current_time, "%H:%M:%S")
+    time_obj = datetime.strptime(current_time, "%Y-%m-%d %H:%M:%S")
     times.append(time_obj)
     powers.append(average_power)
 
@@ -54,10 +55,10 @@ plt.plot(times, powers, linewidth=1)
 
 plt.xlabel("Time")
 plt.ylabel("Average Reported Power (dB)")
-plt.title("October 22, 2026 - 2:00 AM Observation")
+plt.title("October 21–22, 2026 - Night Observation")
 
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
-plt.gca().xaxis.set_major_locator(mdates.MinuteLocator(interval=10))
+plt.gca().xaxis.set_major_locator(mdates.HourLocator(interval=1))
 
 plt.grid(True)
 plt.xticks(rotation=45)
