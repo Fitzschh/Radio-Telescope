@@ -55,7 +55,7 @@ plt.plot(times, powers, linewidth=1)
 
 plt.xlabel("Time")
 plt.ylabel("Average Reported Power (dB)")
-plt.title("October 26, 2026 - 3:40 PM Day Observation")
+plt.title("October 25, 2026 - 8:30 AM Day Observation")
 
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
 plt.gca().xaxis.set_major_locator(mdates.HourLocator(interval=1))
