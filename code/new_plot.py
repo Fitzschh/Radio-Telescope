@@ -8,8 +8,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "solar_spike_exp_batch1_2026-10-28_0900.csv"
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "solar_spike_exp_batch1_2026-10-28_0900_pvt.png"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "observation_24h_2026-10-28_1337.csv"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "observation_24h_2026-10-28_1337_pvt.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -55,7 +55,7 @@ plt.plot(times, powers, linewidth=1)
 
 plt.xlabel("Time")
 plt.ylabel("Average Reported Power (dB)")
-plt.title("October 28, 2026 - 9:00 AM Day Observation")
+plt.title("October 28, 2026 1:37PM - October 29, 2026 1:37PM - 24 Hours Observation")
 
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%H:%M"))
 plt.gca().xaxis.set_major_locator(mdates.HourLocator(interval=1))
