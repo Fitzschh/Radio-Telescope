@@ -8,8 +8,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "sps_exp_attempt_2026-10-30.csv"
-output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "sps_exp_attempt_2026-10-30_pvt.png"
+source = Path.home() / "Projects" / "Radio-Telescope" / "instruments" / "data" / "sps_exp_2026-10-31_1100.csv"
+output = Path.home() / "Projects" / "Radio-Telescope" / "graphs" / "sps_exp_2026-10-31_1100_pvt.png"
 
 output.parent.mkdir(parents=True, exist_ok=True)
 
@@ -66,4 +66,4 @@ plt.tight_layout()
 plt.savefig(output, dpi=180)
 plt.close()
 
-print(f"Saved graph to: {output}")
+print(f"Saved graph to: {output}") 
