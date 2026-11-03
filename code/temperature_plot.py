@@ -14,7 +14,7 @@ root = Path.home() / "Projects" / "Radio-Telescope"
 data = root / "instruments" / "data"
 graphs = root / "graphs"
 
-solar_file = data / "solar_pointing_live_2026-10-30.csv"
+solar_file = data / "sps_exp_2026-10-31_1100.csv"
 rain_file = data / "new_baseline_rain_2026-10-30_1410.csv"
 temperature_file = data / "temperature_log.csv"
 
