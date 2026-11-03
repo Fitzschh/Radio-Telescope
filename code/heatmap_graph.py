@@ -11,9 +11,9 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 root = Path.home() / "Projects" / "Radio-Telescope"
-source = root / "instruments" / "data" / "sps_exp_2026-10-31_1100.csv"
-output = root / "graphs" / "sps_exp_2026-10-31_1100_heatmap.png"
-title = "Candidate Solar Observation — October 31, 2026"
+source = root / "instruments" / "data" / "sps_exp_attempt_2026-10-30.csv"
+output = root / "graphs" / "sps_exp_attempt_2026-10-30_heatmap.png"
+title = "Candidate Solar Observation — October 30, 2026"
 
 records = []
 
